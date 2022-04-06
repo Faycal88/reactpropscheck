@@ -1,22 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import FullName from './profile/profile';
+import pic from './profile/pic.jpg'
 
 function App() {
+  const stylePic = { width: "200px", height: "200px", borderRadius: "50%" }  // inline styling 
+  
+  function handleName(name) {
+      if (!name) {
+      alert("Please enter a valid name ! ")
+    } else {
+      alert(`Hello ${name}`)
+    }
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <FullName fullName="Merabet Faycal" bio="web developer" profession="GMC Student" func={handleName}>
+          <img style={stylePic} src={pic} alt='myprofilepic' />
+        </FullName>
       </header>
     </div>
   );
